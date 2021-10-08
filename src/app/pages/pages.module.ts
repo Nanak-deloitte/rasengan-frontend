@@ -1,3 +1,4 @@
+import { NavbarComponent } from "./../components/navbar/navbar.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
@@ -21,40 +22,41 @@ import { IndexComponent } from "./index/index.component";
 import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from "./login/login.component";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    FormsModule,
-    RouterModule,
-    BsDropdownModule.forRoot(),
-    ProgressbarModule.forRoot(),
-    TooltipModule.forRoot(),
-    PopoverModule.forRoot(),
-    CollapseModule.forRoot(),
-    JwBootstrapSwitchNg2Module,
-    TabsModule.forRoot(),
-    PaginationModule.forRoot(),
-    AlertModule.forRoot(),
-    BsDatepickerModule.forRoot(),
-    CarouselModule.forRoot(),
-    ModalModule.forRoot()
-  ],
-  declarations: [
-    IndexComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent,
-    LoginComponent
-  ],
-  exports: [
-    IndexComponent,
-    ProfilepageComponent,
-    RegisterpageComponent,
-    LandingpageComponent
-  ],
-  providers: []
+    imports: [
+        CommonModule,
+        BrowserModule,
+        FormsModule,
+        RouterModule,
+        BsDropdownModule.forRoot(),
+        ProgressbarModule.forRoot(),
+        TooltipModule.forRoot(),
+        PopoverModule.forRoot(),
+        CollapseModule.forRoot(),
+        JwBootstrapSwitchNg2Module,
+        TabsModule.forRoot(),
+        PaginationModule.forRoot(),
+        AlertModule.forRoot(),
+        BsDatepickerModule.forRoot(),
+        CarouselModule.forRoot(),
+        ModalModule.forRoot(),
+    ],
+    declarations: [
+        IndexComponent,
+        ProfilepageComponent,
+        RegisterpageComponent,
+        LandingpageComponent,
+        LoginComponent,
+        NavbarComponent,
+    ],
+    exports: [
+        IndexComponent,
+        ProfilepageComponent,
+        RegisterpageComponent,
+        LandingpageComponent,
+    ],
+    providers: [],
 })
 export class PagesModule {}

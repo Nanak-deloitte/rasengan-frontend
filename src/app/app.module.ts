@@ -25,7 +25,7 @@ import { RegisterpageComponent } from "./pages/examples/registerpage/registerpag
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
     // IndexComponent,
     // ProfilepageComponent,
     // RegisterpageComponent,
@@ -40,7 +40,7 @@ import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.c
     // BsDropdownModule.forRoot(),
     // ProgressbarModule.forRoot(),
     // TooltipModule.forRoot(),
-    // CollapseModule.forRoot(),
+    CollapseModule.forRoot(),
     // TabsModule.forRoot(),
     PagesModule
     // PaginationModule.forRoot(),
