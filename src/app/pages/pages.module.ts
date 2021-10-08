@@ -23,6 +23,7 @@ import { ProfilepageComponent } from "./examples/profilepage/profilepage.compone
 import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { LoginComponent } from "./login/login.component";
+import { SectiondetailsComponent } from "../components/sectiondetails/sectiondetails.component";
 
 @NgModule({
     imports: [
@@ -50,6 +51,7 @@ import { LoginComponent } from "./login/login.component";
         LandingpageComponent,
         LoginComponent,
         NavbarComponent,
+        SectiondetailsComponent,
     ],
     exports: [
         IndexComponent,

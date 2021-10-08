@@ -4,25 +4,18 @@ import noUiSlider from "nouislider";
 
 @Component({
   selector: "app-index",
-  templateUrl: "index.component.html"
+  templateUrl: "index.component.html",
+  styleUrls: ['index.component.scss']
 })
 export class IndexComponent implements OnInit, OnDestroy {
   isCollapsed = true;
-  focus;
-  focus1;
-  focus2;
-  date = new Date();
-  pagination = 3;
-  pagination1 = 1;
+  items:number[]=[1,2,3,4];
   constructor() {}
-  scrollToDownload(element: any) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
+
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
-    body.classList.add("index-page");
+    body.classList.add("landing-page");
 
-    
     var canvas: any = document.getElementById("chartBig");
     var ctx = canvas.getContext("2d");
     var gradientFill = ctx.createLinearGradient(0, 350, 0, 50);
@@ -46,14 +39,14 @@ export class IndexComponent implements OnInit, OnDestroy {
         ],
         datasets: [
           {
-            label: "Points",
+            label: "Team A's Score",
             fill: true,
             backgroundColor: gradientFill,
-            borderColor: "#e44cc4",
+            borderColor: "#FBA797",
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            pointBackgroundColor: "#e44cc4",
+            pointBackgroundColor: "#FBA797",
             pointBorderColor: "rgba(255,255,255,0)",
             pointHoverBackgroundColor: "#be55ed",
             //pointHoverBorderColor:'rgba(35,46,55,1)',
@@ -61,18 +54,17 @@ export class IndexComponent implements OnInit, OnDestroy {
             pointHoverRadius: 4,
             pointHoverBorderWidth: 15,
             pointRadius: 4,
-            data: [350, 1600, 2400, 2650, 2850, 3000, 3220, 3490, 4200, 4450],
-            tension: 0.4,
+            data: [140, 30, 350, 30, 250, 2140, 220, 190, 200, 250]
           },
           {
-            label: "Points",
+            label: "Team B's Score",
             fill: true,
             backgroundColor: gradientFill,
-            borderColor: "#e44cc4",
+            borderColor: "#DE1E2B",
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            pointBackgroundColor: "#e44cc4",
+            pointBackgroundColor: "#DE1E2B",
             pointBorderColor: "rgba(255,255,255,0)",
             pointHoverBackgroundColor: "#be55ed",
             //pointHoverBorderColor:'rgba(35,46,55,1)',
@@ -80,18 +72,17 @@ export class IndexComponent implements OnInit, OnDestroy {
             pointHoverRadius: 4,
             pointHoverBorderWidth: 15,
             pointRadius: 4,
-            data: [50, 1200, 2300, 2580, 2800, 3200 , 3400, 3850, 4100, 4500],
-            tension: 0.4,
+            data: [90, 160, 65, 160, 369, 280, 220, 190, 65, 250]
           },
           {
-            label: "Points",
+            label: "Team C's Score",
             fill: true,
             backgroundColor: gradientFill,
-            borderColor: "#e44cc4",
+            borderColor: "#A91B60",
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            pointBackgroundColor: "#e44cc4",
+            pointBackgroundColor: "#A91B60",
             pointBorderColor: "rgba(255,255,255,0)",
             pointHoverBackgroundColor: "#be55ed",
             //pointHoverBorderColor:'rgba(35,46,55,1)',
@@ -99,18 +90,17 @@ export class IndexComponent implements OnInit, OnDestroy {
             pointHoverRadius: 4,
             pointHoverBorderWidth: 15,
             pointRadius: 4,
-            data: [200, 1500, 2100, 2600, 2850, 3050, 3500, 3750, 4050, 4350, 4650],
-            tension: 0.4,
+            data: [80, 160, 200, 160, 250, 280, 220, 190, 200, 250]
           },
           {
-            label: "Points",
+            label: "Team D's Score",
             fill: true,
             backgroundColor: gradientFill,
-            borderColor: "#e44cc4",
+            borderColor: "#F9DF3C",
             borderWidth: 2,
             borderDash: [],
             borderDashOffset: 0.0,
-            pointBackgroundColor: "#e44cc4",
+            pointBackgroundColor: "#F9DF3C",
             pointBorderColor: "rgba(255,255,255,0)",
             pointHoverBackgroundColor: "#be55ed",
             //pointHoverBorderColor:'rgba(35,46,55,1)',
@@ -118,8 +108,8 @@ export class IndexComponent implements OnInit, OnDestroy {
             pointHoverRadius: 4,
             pointHoverBorderWidth: 15,
             pointRadius: 4,
-            data: [100, 1600, 2200, 2550, 2950, 3280, 3450, 3790, 4300, 4570]
-          }
+            data: [90, 160, 250, 160, 280, 200, 200, 220, 190, 300]
+          },
         ]
       },
       options: {
@@ -127,15 +117,6 @@ export class IndexComponent implements OnInit, OnDestroy {
         legend: {
           display: false
         },
-        animations: {
-          radius: {
-            duration: 400,
-            easing: 'linear',
-            loop: (context) => context.active
-          }
-        },
-        hoverRadius: 12,
-        hoverBackgroundColor: 'yellow',
 
         tooltips: {
           backgroundColor: "#fff",
@@ -158,11 +139,10 @@ export class IndexComponent implements OnInit, OnDestroy {
                 zeroLineColor: "transparent"
               },
               ticks: {
-                stepSize : 100,
                 display: false,
                 suggestedMin: 0,
                 suggestedMax: 350,
-                padding: 200,
+                padding: 20,
                 fontColor: "#9a9a9a"
               }
             }
@@ -183,28 +163,6 @@ export class IndexComponent implements OnInit, OnDestroy {
             }
           ]
         }
-      }
-    });
-
-    var slider = document.getElementById("sliderRegular");
-
-    noUiSlider.create(slider, {
-      start: 40,
-      connect: false,
-      range: {
-        min: 0,
-        max: 100
-      }
-    });
-
-    var slider2 = document.getElementById("sliderDouble");
-
-    noUiSlider.create(slider2, {
-      start: [20, 60],
-      connect: true,
-      range: {
-        min: 0,
-        max: 100
       }
     });
   }

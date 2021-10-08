@@ -1,67 +1,315 @@
 <app-navbar></app-navbar>
 <div class="wrapper">
-  <div class="page-header header-filter">
-    <div class="squares square1"></div>
-    <div class="squares square2"></div>
-    <div class="squares square3"></div>
-    <div class="squares square4"></div>
-    <div class="squares square5"></div>
-    <div class="squares square6"></div>
-    <div class="squares square7"></div>
-    <div class="container">
-      <!-- <div style="height: 20%; width: 80%;"></div> -->
-      <div class="content-center brand" style="width:123%;">
-        <!-- <h1 class="h1-seo">chart.</h1>
-        <h3>
-          Yaha pe chart lagega
-        </h3> -->
 
-        <!-- <section class="section section-lg">  -->
-          <!-- <img class="path" src="assets/img/path4.png" />
-      
-          <img class="path2" src="assets/img/path2.png" /> -->
-      
-          <div class="col-md-12">
-            <div class="card card-chart card-plain">
-              <div class="card-header">
-                <div class="row">
-                  <div class="col-sm-6 text-left">
-                    <hr class="line-primary" />
-      
-                    <h5 class="card-category">Section Wise</h5>
-                    <h2 class="card-title">Performance</h2>
+   <section class="section section-lg">
+   
+
+  <!-- <img class="shapes wave" src="../../../assets/img/waves.png" /> -->
+
+  <!-- <img class="shapes squares" src="../../../assets/img/patrat.png" height="80%" width="80%"/> -->
+  
+
+  <img class="shapes triangle" src="../../../assets/img/triunghiuri.png" style="margin-left: 80%;margin-top:10%;"/>
+
+  <img class="shapes circle" src="../../../assets/img/cercuri.png"style="margin-top:10%" />
+
+ 
+    <div class="col-md-12">
+      <div class="card card-chart card-plain">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-6 text-left">
+              <hr class="line-primary" />
+               <!-- dropdown batches -->
+              <div class=" dropdown" dropdown style="margin-left: 100%;margin-top:2%;">
+                <button aria-expanded="false" aria-haspopup="true" class=" btn btn-warning dropdown-toggle dropdown-toggle" data-toggle="dropdown" dropdownToggle id="dropdownMenuButton" type="button">
+                  Select Batch
+                </button>
+                <div aria-labelledby="dropdownMenuButton" class=" dropdown-menu" style="color:black;" *dropdownMenu >
+                  <a class=" dropdown-item" href="#">
+                    HU 20.0(SDE)
+                  </a>
+                  <a class=" dropdown-item" href="#">
+                    HU 20.0(SDET)
+                  </a>
+                  <a class=" dropdown-item" href="#">
+                    HU 19.2
+                  </a>
+                </div>
+              </div>
+              <h3 class="card-category">Section-Wise </h3>
+              <h1 class="card-title">Performance</h1>
+              
+ 
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-area"><canvas id="chartBig"> </canvas></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="section section-lg">
+    <section class="section">
+      <img class="path" src="../../../assets/img/path4.png" />
+
+      <div class="container">
+        <div class="row row-grid justify-content-between">
+          <div class="col-md-5 mt-lg-5">
+            <div class="row">
+              <div class="col-lg-6 col-sm-12 px-2 py-2">
+                <div class="card card-stats upper bg-default">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <!-- <i class="tim-icons icon-trophy text-warning"> </i> -->
+                          <img src="../../../assets/img/trophy.png"/>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-title">4100</p>
+                          <p></p>
+                          <p class="card-category">Dominators</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="card-body">
-                <div class="chart-area"><canvas id="chartBig"> </canvas></div>
+              <div class="col-lg-6 col-sm-12 px-2 py-2">
+                <div class="card card-stats ">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <!-- <i class="tim-icons icon-coins text-white"> </i> -->
+                          <img src="../../../assets/img/second.jpg"/>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-title">3800</p>
+                          <p></p>
+                          <p class="card-category">Superlatives</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-sm-12 px-2 py-2">
+                <div class="card card-stats">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <!-- <i class="tim-icons icon-gift-2 text-info"> </i> -->
+                          <img src="../../../assets/img/3.jpg"/>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-title">3500</p>
+                          <p></p>
+                          <p class="card-category">Disco Ninjas</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 col-sm-12 px-2 py-2">
+                <div class="card card-stats">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-5 col-md-4">
+                        <div class="icon-big text-center icon-warning">
+                          <!-- <i class="tim-icons icon-credit-card text-success">
+                          </i> -->
+                          <img src="../../../assets/img/4th-of-july.png" style="background-color: white;"/>
+                        </div>
+                      </div>
+                      <div class="col-7 col-md-8">
+                        <div class="numbers">
+                          <p class="card-title">2500</p>
+                          <p></p>
+                          <p class="card-category">Y-Nots</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        <!-- </section> -->
-    </div>
-  </div>
-  </div>
-  <div class="main">
-    <div class="section section-basic" id="basic-elements">
-      <img class="path" src="assets/img/path1.png" />
+          <div class="col-md-6">
+            <div class="pl-md-5">
+              <h1>
+                Leader Board
+              </h1>
+              <p>
+                I should be capable of drawing a single stroke at the present
+                moment; and yet I feel that I never was a greater artist than
+                now.
+              </p>
+              <br />
 
-      <div class="container" style="background-color: aliceblue;">
-        <h3>Upcoming KunaKidza Events</h3>
+              <p>
+                When, while the lovely valley teams with vapour around me, and
+                the meridian sun strikes the upper surface of the impenetrable
+                foliage of my trees, and but a few stray.
+              </p>
+              <br />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+  
+  <section class="section section-lg">
+    <img class="path" src="../../../assets/img/path4.png" style="opacity:0.025" />
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <h1 class="text-center">Section Details</h1>
+          <div class="section-card" style="height:50%">
+            <app-sectiondetails *ngFor="let i of items;"></app-sectiondetails>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
+  <section class="section section-lg section-safe">
+    <img class="path" src="../../../assets/img/path5.png" />
+
+    <div class="container">
+      <div class="row row-grid justify-content-between">
+        <div class="col-md-5">
+          <img class="img-fluid floating" src="../../../assets/img/time.jpg" />
+          
+        </div>
+        <div class="col-md-6">
+          <div class="px-md-5">
+            <hr class="line-success" />
+
+            <h3>Upcoming Kuna Event</h3>
+            <h4>Mark Your Calendars!</h4>
+            <p>
+              Any other fossickers excited for this? We’re pretty jazzed.
+            </p>
+            <ul class="list-unstyled mt-5">
+              <li class="py-2">
+                <div class="d-flex align-items-center">
+                  <div class="icon icon-success mb-2">
+                    <i class="tim-icons icon-vector"> </i>
+                  </div>
+                  <div class="ml-3"><h6>Event Date : 12th October 2021</h6></div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="d-flex align-items-center">
+                  <div class="icon icon-success mb-2">
+                    <i class="tim-icons icon-tap-02"> </i>
+                  </div>
+                  <div class="ml-3"><h6>Start Time : 04:00 PM</h6></div>
+                </div>
+              </li>
+              <li class="py-2">
+                <div class="d-flex align-items-center">
+                  <div class="icon icon-success mb-2">
+                    <i class="tim-icons icon-single-02"> </i>
+                  </div>
+                  <div class="ml-3"><h6>Meet Link : </h6></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-3"><h1 class="title">HashedIn</h1></div>
-
-
-
+        <div class="col-md-3"><h1 class="title">BLK•</h1></div>
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/home']"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/landing']"> Landing </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/register']"> Register </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/profile']"> Profile </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="https://creative-tim.com/contact-us?ref=blkdsa-footer">
+                Contact Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://creative-tim.com/about-us?ref=blkdsa-footer">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://creative-tim.com/blog?ref=blkdsa-footer">
+                Blog
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://opensource.org/licenses/MIT">
+                License
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h3 class="title">Follow us:</h3>
+          <div class="btn-wrapper profile">
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="https://twitter.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-twitter"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+              href="https://www.facebook.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-facebook-square"> </i>
+            </a>
+            <a
+              class="btn btn-icon btn-neutral btn-round btn-simple"
+              href="https://dribbble.com/creativetim"
+              target="_blank"
+            >
+              <i class="fab fa-dribbble"> </i>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </footer>
 </div>
-
-<!-- <app-login></app-login> -->
