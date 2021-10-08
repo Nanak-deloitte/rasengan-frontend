@@ -1,5 +1,5 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app-routing.module";
@@ -23,33 +23,40 @@ import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
+import { StorageServiceModule } from "ngx-webstorage-service";
+import { ReactiveFormsModule } from "@angular/forms";
+import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
 @NgModule({
-  declarations: [
-    AppComponent,
-    // IndexComponent,
-    // ProfilepageComponent,
-    // RegisterpageComponent,
-    // LandingpageComponent
-  ],
-  imports: [
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule,
-    AppRoutingModule,
-    // BsDropdownModule.forRoot(),
-    // ProgressbarModule.forRoot(),
-    // TooltipModule.forRoot(),
-    CollapseModule.forRoot(),
-    // TabsModule.forRoot(),
-    PagesModule
-    // PaginationModule.forRoot(),
-    // AlertModule.forRoot(),
-    // BsDatepickerModule.forRoot(),
-    // CarouselModule.forRoot(),
-    // ModalModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        // IndexComponent,
+        // ProfilepageComponent,
+        // RegisterpageComponent,
+        // LandingpageComponent
+    ],
+    imports: [
+        BrowserAnimationsModule,
+        FormsModule,
+        HttpClientModule,
+        RouterModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        // BsDropdownModule.forRoot(),
+        // ProgressbarModule.forRoot(),
+        // TooltipModule.forRoot(),
+        CollapseModule.forRoot(),
+        // TabsModule.forRoot(),
+        PagesModule,
+        StorageServiceModule,
+        NgxSpinnerModule
+        // PaginationModule.forRoot(),
+        // AlertModule.forRoot(),
+        // BsDatepickerModule.forRoot(),
+        // CarouselModule.forRoot(),
+        // ModalModule.forRoot()
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}

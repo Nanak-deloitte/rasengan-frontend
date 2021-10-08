@@ -2,7 +2,7 @@ import { NavbarComponent } from "./../components/navbar/navbar.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
@@ -42,6 +42,7 @@ import { LoginComponent } from "./login/login.component";
         BsDatepickerModule.forRoot(),
         CarouselModule.forRoot(),
         ModalModule.forRoot(),
+        ReactiveFormsModule
     ],
     declarations: [
         IndexComponent,

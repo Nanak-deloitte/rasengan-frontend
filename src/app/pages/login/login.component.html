@@ -1,3 +1,4 @@
+
 <div class="wrapper">
   <div class="page-header">
     <div class="page-header-image"></div>
@@ -9,58 +10,36 @@
             <div class="square square-8" id="square8"></div>
             <div class="card card-register">
               <div class="card-header">
-                <img
-                  alt="Card image"
-                  class="card-img"
-                  src="assets/img/square1-red.png"
-                />
+                <img alt="Card image" class="card-img" src="assets/img/square1-red.png" />
 
                 <h4 class="card-title">LOGIN</h4>
               </div>
               <div class="card-body">
-                <form class="form">
-                  <div
-                    class="input-group"
-                    [ngClass]="{ 'input-group-focus': focus1 === true }"
-                  >
+                <form [formGroup]="loginForm" class="form">
+                  <div class="input-group" [ngClass]="{ 'input-group-focus': focus1 === true }">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="tim-icons icon-email-85"> </i>
                       </div>
                     </div>
-                    <input
-                      class="form-control"
-                      placeholder="Email"
-                      type="text"
-                      (focus)="focus1 = true"
-                      (blur)="focus1 = false"
-                    />
+                    <input class="form-control" placeholder="Email" type="text" [formControlName]="'email'"
+                      (focus)="focus1 = true" required (blur)="focus1 = false" />
                   </div>
-                  <div
-                    class="input-group"
-                    [ngClass]="{ 'input-group-focus': focus2 === true }"
-                  >
+                  <div class="input-group" [ngClass]="{ 'input-group-focus': focus2 === true }">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="tim-icons icon-lock-circle"> </i>
                       </div>
                     </div>
-                    <input
-                      class="form-control"
-                      placeholder="Password"
-                      type="text"
-                      (focus)="focus2 = true"
-                      (blur)="focus2 = false"
-                    />
+                    <input class="form-control" placeholder="Password" type="text" (focus)="focus2 = true"
+                      [type]="hide ? 'password' : 'text'" required [formControlName]="'password'"
+                      (blur)="focus2 = false" />
                   </div>
-                  
+
                 </form>
               </div>
               <div class="card-footer">
-                <a
-                  class="btn btn-danger btn-round btn-lg"
-                  href="javascript:void(0)"
-                >
+                <a class="btn btn-danger btn-round btn-lg" (click)="login()">
                   LOGIN
                 </a>
               </div>
@@ -80,7 +59,9 @@
   <footer class="footer">
     <div class="container">
       <div class="row">
-        <div class="col-md-3"><h1 class="title">BLK•</h1></div>
+        <div class="col-md-3">
+          <h1 class="title">BLK•</h1>
+        </div>
         <div class="col-md-3">
           <ul class="nav">
             <li class="nav-item">
@@ -124,25 +105,16 @@
         <div class="col-md-3">
           <h3 class="title">Follow us:</h3>
           <div class="btn-wrapper profile">
-            <a
-              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-              href="https://twitter.com/creativetim"
-              target="_blank"
-            >
+            <a class="btn btn-icon btn-neutral btn-round btn-simple mr-1" href="https://twitter.com/creativetim"
+              target="_blank">
               <i class="fab fa-twitter"> </i>
             </a>
-            <a
-              class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
-              href="https://www.facebook.com/creativetim"
-              target="_blank"
-            >
+            <a class="btn btn-icon btn-neutral btn-round btn-simple mr-1" href="https://www.facebook.com/creativetim"
+              target="_blank">
               <i class="fab fa-facebook-square"> </i>
             </a>
-            <a
-              class="btn btn-icon btn-neutral btn-round btn-simple"
-              href="https://dribbble.com/creativetim"
-              target="_blank"
-            >
+            <a class="btn btn-icon btn-neutral btn-round btn-simple" href="https://dribbble.com/creativetim"
+              target="_blank">
               <i class="fab fa-dribbble"> </i>
             </a>
           </div>
