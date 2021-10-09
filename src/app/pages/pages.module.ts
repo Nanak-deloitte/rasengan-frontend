@@ -24,6 +24,8 @@ import { RegisterpageComponent } from "./examples/registerpage/registerpage.comp
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { LoginComponent } from "./login/login.component";
 import { SectiondetailsComponent } from "../components/sectiondetails/sectiondetails.component";
+import { FooterComponent } from "../components/footer/footer.component";
+import { ContactUsComponent } from "../components/contact-us/contact-us.component";
 
 @NgModule({
     imports: [
@@ -47,18 +49,22 @@ import { SectiondetailsComponent } from "../components/sectiondetails/sectiondet
     ],
     declarations: [
         IndexComponent,
+        ContactUsComponent,
         ProfilepageComponent,
         RegisterpageComponent,
         LandingpageComponent,
         LoginComponent,
         NavbarComponent,
         SectiondetailsComponent,
+        FooterComponent,
+        
     ],
     exports: [
         IndexComponent,
         ProfilepageComponent,
         RegisterpageComponent,
         LandingpageComponent,
+        ContactUsComponent,
     ],
     providers: [],
 })
