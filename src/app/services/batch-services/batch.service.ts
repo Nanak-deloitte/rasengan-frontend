@@ -10,13 +10,16 @@ export class BatchService {
     private batchURL = "http://localhost:8080/api/batch/getBatchDetails/";
     private allBatchesURL = "http://localhost:8080/api/batch/viewAll";
 
-    // allBatches: IBatch[] = [];
+    batch: IBatch;
     allBatches = new Subject<IBatch[]>();
     constructor(private http: HttpClient) {}
 
-    getBatch(batchId: string): Observable<IBatch> {
+    getBatch(batchId: number): Observable<IBatch> {
         return this.http.get<IBatch>(this.batchURL + batchId);
     }
+
+
+
 
     loadAllBatches() {
         this.http.get<IBatch[]>(this.allBatchesURL).subscribe((data) => {
