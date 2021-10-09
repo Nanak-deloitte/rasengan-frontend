@@ -28,7 +28,6 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { SectiondetailsComponent } from './components/sectiondetails/sectiondetails.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import { MemberComponent } from './components/member/member.component';
 @NgModule({
   declarations: [
     AppComponent,
