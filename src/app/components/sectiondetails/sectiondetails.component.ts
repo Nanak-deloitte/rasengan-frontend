@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ITeaminBatch } from 'src/app/models/batch.model';
+import { ITeam } from 'src/app/models/team.model';
 
 @Component({
   selector: 'app-sectiondetails',
@@ -9,7 +10,7 @@ import { ITeaminBatch } from 'src/app/models/batch.model';
 export class SectiondetailsComponent implements OnInit {
 
   constructor() { }
-  @Input() team: ITeaminBatch;
+  @Input() team: ITeam;
   ngOnInit(): void {
   }
 

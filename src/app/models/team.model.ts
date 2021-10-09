@@ -6,8 +6,10 @@
 import { IUser } from "./user.model";
 
 export interface ITeam {
+    teamId: number;
     teamName: string;
-    scores: number;
+    totalScore: number;
     sectionLead: IUser;
     members: IUser[];
+    eventScores:number[];
 }
