@@ -30,8 +30,9 @@ export class AuthService {
         this.spinner.show();
         this.loginAPI(email, password).subscribe((data) => {
             this.userDetails = data;
+            console.log(this.userDetails);
             this.storage.set("userId", data.userId);
-            this.storage.set("name", data.name);
+            this.storage.set("name", data.username);
             this.storage.set("email", data.email);
             this.storage.set("batch", data.batch);
             this.storage.set("team", data.team);
