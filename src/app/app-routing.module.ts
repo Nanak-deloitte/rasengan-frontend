@@ -8,12 +8,14 @@ import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.c
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { LoginComponent } from "./pages/login/login.component";
+import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: IndexComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "login", component: LoginComponent },
+  {path: "contact-us", component: ContactUsComponent},
   { path: "landing", component: LandingpageComponent }
 ];
 
