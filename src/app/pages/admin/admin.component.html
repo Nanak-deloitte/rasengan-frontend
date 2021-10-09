@@ -1,1 +1,193 @@
-<p>admin works!</p>
+<app-navbar></app-navbar>
+<div aria-hidden="true" aria-labelledby="myModalLabel" bsModal class="modal fade modal-black" #myModal2="bs-modal"
+    id="myModal2" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <button aria-hidden="true" class="close" data-dismiss="modal" (click)="myModal2.hide()" type="button">
+                    <i class="tim-icons icon-simple-remove text-white"> </i>
+                </button>
+                <div class="text-muted text-center ml-auto mr-auto">
+                    <h3 class="mb-0">Create Batch</h3>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="batchForm" role="form">
+                    <div class="form-group mb-3">
+                        <div class="input-group input-group-alternative"
+                            [ngClass]="{'input-group-focus':focus1===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                </span>
+                            </div>
+                            <input class="form-control" placeholder="Enter Batch Name" type="text"
+                                [formControlName]="'batchName'" (blur)="focus1=false" />
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of allUsers">
+                                <td class="td-actions text-left">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input (change)="onCheckChange($event)" class="form-check-input"
+                                                type="checkbox" [value]="user.userId">
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>{{user.username}}</td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary my-4" type="button" (click)="createBatch(); myModal2.hide()">
+                            Finalize & Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="wrapper">
+
+
+    <section class="section section-lg">
+        <img class="shapes circle" src="../../../assets/img/cercuri.png" style="margin-top:10%" />
+        <img class="shapes triangle" src="../../../assets/img/triunghiuri.png"
+            style="margin-left: 80%;margin-top:10%;" />
+
+
+        <div class="col-md-12">
+
+            <div class="container">
+
+                <div class="row mb-5">
+                    <div class=" col-6 ">
+                        <img class="batch-img" src="../../../assets/img/path4.png" />
+                    </div>
+                    <div class="col-6">
+                        <h2>
+                            Let's create a new HU Batch
+                        </h2>
+                        <p>
+                            Is our hashedIn Family about to increase? Awesome! <br>
+                            Go ahead and create a new HU batch for them. They deserve some fun Kuna activities.
+                        </p>
+                        <br>
+                        <button class="btn btn-success" data-target="#myModal2" (click)="myModal2.show()">
+                            Create Batch
+                        </button>
+                    </div>
+                </div>
+                <div class="row ">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 col-md-12">
+
+            <div class="container">
+
+                <div class="row mb-5">
+                    <div class="col-6 text-right">
+                        <h2>
+                            Now it's time to create new teams for
+                        </h2>
+                        <p>
+                            Is our hashedIn Family about to increase? Awesome! <br>
+                            Go ahead and create a new HU batch for them. They deserve some fun Kuna activities.
+                        </p>
+                        <br>
+                        <button class="btn btn-success" data-target="#myModal2" (click)="myModal2.show()">
+                            Create Batch
+                        </button>
+                    </div>
+                    <div class=" col-6 ">
+                        <img class="batch-img" src="../../../assets/img/path2.png" />
+                    </div>
+                </div>
+                <div class="row ">
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-12">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <tabset class="nav-tabs-primary">
+                                <tab>
+                                    <ng-template tabHeading>
+                                        Batches
+                                    </ng-template>
+                                    <p>
+                                        Collaboratively administrate empowered markets via
+                                        plug-and-play networks. Dynamically procrastinate B2C
+                                        users after installed base benefits. <br />
+
+                                        <br />
+
+                                        Dramatically visualize customer directed convergence
+                                        without revolutionary ROI.
+                                    </p>
+                                </tab>
+                                <tab>
+                                    <ng-template tabHeading>
+                                        Teams
+                                    </ng-template>
+                                    <p>
+                                        Completely synergize resource taxing relationships via
+                                        premier niche markets. Professionally cultivate one-to-one
+                                        customer service with robust ideas. <br />
+
+                                        <br />
+
+                                        Dynamically innovate resource-leveling customer service
+                                        for state of the art customer service.
+                                    </p>
+                                </tab>
+                                <tab>
+                                    <ng-template tabHeading>
+                                        <i class="tim-icons icon-bag-16"> </i> Options
+                                    </ng-template>
+                                    <p>
+                                        Efficiently unleash cross-media information without
+                                        cross-media value. Quickly maximize timely deliverables
+                                        for real-time schemas. <br />
+
+                                        <br />
+
+                                        Dramatically maintain clicks-and-mortar solutions without
+                                        functional solutions.
+                                    </p>
+                                </tab>
+                            </tabset>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,3 +1,4 @@
+import { AuthService } from "./../../services/auth-service/auth.service";
 import { BatchService } from "./../../services/batch-services/batch.service";
 import { IBatch } from "./../../models/batch.model";
 import { Component, OnInit, OnDestroy } from "@angular/core";
@@ -12,12 +13,16 @@ import noUiSlider from "nouislider";
 export class IndexComponent implements OnInit, OnDestroy {
     isCollapsed = true;
     items: number[] = [1, 2, 3, 4];
-    constructor(private batchService: BatchService) {}
+    constructor(
+        private batchService: BatchService,
+        private auth: AuthService
+    ) {}
     batches: IBatch[] = [];
 
     ngOnInit() {
-      console.log("Hi");
-      this.batchService.loadAllBatches()
+        console.log(this.auth.getUserDetails());
+
+        this.batchService.loadAllBatches();
         this.batchService.allBatches.subscribe((data) => {
             this.batches = [...data];
             console.log(data);

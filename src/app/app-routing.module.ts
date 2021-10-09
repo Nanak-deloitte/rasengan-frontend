@@ -1,3 +1,4 @@
+import { AdminComponent } from './pages/admin/admin.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { BrowserModule } from "@angular/platform-browser";
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path: "home", component: IndexComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "login", component: LoginComponent },
+  { path: "landing", component: LandingpageComponent },
+  { path: "admin", component: AdminComponent },
   {path: "contact-us", component: ContactUsComponent},
-  { path: "landing", component: LandingpageComponent }
 ];
 
 @NgModule({
