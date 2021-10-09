@@ -1,4 +1,4 @@
-teamName;
-scores;
-sectionLead;
-members;
+// teamName;
+// scores;
+// sectionLead;
+// members;
