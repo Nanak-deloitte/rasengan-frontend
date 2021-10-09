@@ -1,9 +1,11 @@
-import { AuthService } from "./../../services/auth-service/auth.service";
+
 import { BatchService } from "./../../services/batch-services/batch.service";
-import { IBatch } from "./../../models/batch.model";
+import { IBatch, ITeaminBatch } from "./../../models/batch.model";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import Chart from "chart.js";
 import noUiSlider from "nouislider";
+import { AuthService } from "src/app/services/auth-service/auth.service";
+import { IUser } from "src/app/models/user.model";
 
 @Component({
     selector: "app-index",
@@ -12,23 +14,37 @@ import noUiSlider from "nouislider";
 })
 export class IndexComponent implements OnInit, OnDestroy {
     isCollapsed = true;
-    items: number[] = [1, 2, 3, 4];
-    constructor(
-        private batchService: BatchService,
-        private auth: AuthService
-    ) {}
+    // items: number[] = [1, 2, 3, 4];
+    teams: ITeaminBatch[];
+    batch: IBatch;
+    user: IUser;
+    constructor(private batchService: BatchService, private authService:AuthService) {}
     batches: IBatch[] = [];
 
     ngOnInit() {
-        console.log(this.auth.getUserDetails());
+        console.log(this.authService.getUserDetails());
 
         this.batchService.loadAllBatches();
         this.batchService.allBatches.subscribe((data) => {
             this.batches = [...data];
             console.log(data);
         });
+        this.user=this.authService.getUserDetails();
+        console.log(this.user);
+
+        this.batchService.getBatch(1).subscribe(
+          (batch: IBatch)=>{
+            this.batch = batch;
+            this.teams=batch.teams;
+        console.log(this.batch);
+        console.log(this.teams);
+          }
+      );
+        
         var body = document.getElementsByTagName("body")[0];
         body.classList.add("landing-page");
+
+
 
         var canvas: any = document.getElementById("chartBig");
         var ctx = canvas.getContext("2d");
