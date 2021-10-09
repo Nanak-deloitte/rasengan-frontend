@@ -24,6 +24,7 @@ import { RegisterpageComponent } from "./examples/registerpage/registerpage.comp
 import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { LoginComponent } from "./login/login.component";
 import { AdminComponent } from './admin/admin.component';
+import { SectiondetailsComponent } from "../components/sectiondetails/sectiondetails.component";
 
 @NgModule({
     imports: [
@@ -53,6 +54,7 @@ import { AdminComponent } from './admin/admin.component';
         LoginComponent,
         NavbarComponent,
         AdminComponent,
+        SectiondetailsComponent,
     ],
     exports: [
         IndexComponent,

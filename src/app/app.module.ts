@@ -19,23 +19,26 @@ import { ModalModule } from "ngx-bootstrap/modal";
 
 import { PagesModule } from "./pages/pages.module";
 
+import { StorageServiceModule } from "ngx-webstorage-service";
+import { ReactiveFormsModule } from "@angular/forms";
+import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
+
 import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
 import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
-import { StorageServiceModule } from "ngx-webstorage-service";
-import { ReactiveFormsModule } from "@angular/forms";
-import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
+import { SectiondetailsComponent } from './components/sectiondetails/sectiondetails.component';
 @NgModule({
-    declarations: [
-        AppComponent,
-        // IndexComponent,
-        // ProfilepageComponent,
-        // RegisterpageComponent,
-        // LandingpageComponent
-    ],
-    imports: [
-        BrowserAnimationsModule,
+  declarations: [
+    AppComponent,
+    // SectiondetailsComponent,
+    // IndexComponent,
+    // ProfilepageComponent,
+    // RegisterpageComponent,
+    // LandingpageComponent
+  ],
+  imports: [
+    BrowserAnimationsModule,
         FormsModule,
         HttpClientModule,
         RouterModule,
@@ -54,9 +57,9 @@ import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
         // BsDatepickerModule.forRoot(),
         // CarouselModule.forRoot(),
         // ModalModule.forRoot()
-    ],
-    providers: [],
-    bootstrap: [AppComponent],
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
