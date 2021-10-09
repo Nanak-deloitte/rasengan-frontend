@@ -20,9 +20,8 @@ export class IndexComponent implements OnInit, OnDestroy {
     batches: IBatch[] = [];
 
     ngOnInit() {
-        
         console.log(this.auth.getUserDetails());
-        
+
         this.batchService.loadAllBatches();
         this.batchService.allBatches.subscribe((data) => {
             this.batches = [...data];

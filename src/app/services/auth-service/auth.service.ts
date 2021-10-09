@@ -61,6 +61,18 @@ export class AuthService {
     }
 
     getUserDetails() {
+        if (this.userDetails === null || this.userDetails === undefined) {
+            this.userDetails = {
+                userId: this.storage.get("userId"),
+                username: this.storage.get("username"),
+                email: this.storage.get("email"),
+                password: this.storage.get("password"),
+                batch: this.storage.get("batch"),
+                team: this.storage.get("team"),
+                admin: this.storage.get("admin"),
+                isSectionLead: this.storage.get("isSectionLead"),
+            };
+        }
         return this.userDetails;
     }
 
