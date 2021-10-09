@@ -100,12 +100,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     login() {
-        if (!this.auth.isLoggedIn()) {
-            this.auth.login(
-                this.loginForm.get("email")?.value,
-                this.loginForm.get("password")?.value
-            );
-            this.router.navigateByUrl("/");
-        }
+        this.auth.login(
+            this.loginForm.get("email")?.value,
+            this.loginForm.get("password")?.value
+        );
+        this.router.navigateByUrl("/");
     }
 }

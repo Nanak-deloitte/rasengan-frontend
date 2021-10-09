@@ -33,9 +33,15 @@
                     </a>
                 </li>
                 <li *ngIf="isLoggedIn" class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">
-                        <i class="tim-icons icon-single-02"> </i>
-                    </a>
+                    <div class=" dropdown" dropdown>
+                        <i data-toggle="dropdown" dropdownToggle id="dropdownMenuButton" style="cursor: pointer;"
+                            class="tim-icons icon-single-02"> </i>
+                        <div aria-labelledby="dropdownMenuButton" class=" dropdown-menu" *dropdownMenu>
+                            <a class="dropdown-item" (click)="logout()" href="#">
+                                LOGOUT
+                            </a>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>

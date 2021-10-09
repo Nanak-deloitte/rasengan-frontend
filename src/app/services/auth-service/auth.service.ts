@@ -2,7 +2,7 @@ import { IUser } from "./../../models/user.model";
 import { HttpClient } from "@angular/common/http";
 import { Inject, Injectable } from "@angular/core";
 import { SESSION_STORAGE, StorageService } from "ngx-webstorage-service";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { NgxSpinnerService } from "ngx-bootstrap-spinner";
 
 @Injectable({
@@ -17,13 +17,12 @@ export class AuthService {
     loginURL = "http://localhost:8080/api/user/login";
 
     private userDetails: IUser;
-    
-    
+    loginStatus = new Subject<boolean>();
 
     private loginAPI(email: string, password: string): Observable<IUser> {
         return this.http.post<IUser>(this.loginURL, {
-            email:email,
-            password:password,
+            email: email,
+            password: password,
         });
     }
 
@@ -38,12 +37,14 @@ export class AuthService {
             this.storage.set("team", data.team);
             this.storage.set("admin", data.admin);
             this.storage.set("isSectionLead", data.isSectionLead);
+            this.loginStatus.next(true);
             this.spinner.hide();
         });
     }
 
     logout() {
         this.storage.clear();
+        this.loginStatus.next(false);
     }
 
     getUserId(): string {
@@ -62,7 +63,15 @@ export class AuthService {
         return this.userDetails;
     }
 
-    isLoggedIn(): boolean {
-        return this.getUserId() != null;
+    isLoggedIn(): Observable<boolean> {
+        return this.loginStatus.asObservable();
+    }
+
+    checkLogin() {
+        if (this.storage.get("userId")) {
+            this.loginStatus.next(true);
+        } else {
+            this.loginStatus.next(false);
+        }
     }
 }
