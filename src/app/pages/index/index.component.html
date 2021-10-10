@@ -20,23 +20,6 @@
           <div class="row">
             <div class="col-sm-6 text-left">
               
-               <!-- dropdown batches -->
-              <div class=" dropdown" dropdown style="margin-left: 100%;margin-top:2%;">
-                <button aria-expanded="false" aria-haspopup="true" class=" btn btn-warning dropdown-toggle dropdown-toggle" data-toggle="dropdown" dropdownToggle id="dropdownMenuButton" type="button" style="text-align: center;">
-                  Select Batch
-                </button>
-                <div aria-labelledby="dropdownMenuButton" class=" dropdown-menu" style="color:black;" *dropdownMenu >
-                  <a class=" dropdown-item" href="#">
-                    HU 20.0(SDE)
-                  </a>
-                  <a class=" dropdown-item" href="#">
-                    HU 20.0(SDET)
-                  </a>
-                  <a class=" dropdown-item" href="#">
-                    HU 19.2
-                  </a>
-                </div>
-              </div>
               <br/>
               <hr class="line-primary" />
               <h3 class="card-category">Section-Wise </h3>
@@ -74,9 +57,9 @@
                       </div>
                       <div class="col-7 col-md-8">
                         <div class="numbers">
-                          <p class="card-title">4100</p>
+                          <p class="card-title">{{this.team[3].totalScore}}</p>
                           <p></p>
-                          <p class="card-category">Dominators</p>
+                          <p class="card-category">{{this.team[3].teamName}}</p>
                         </div>
                       </div>
                     </div>
@@ -95,9 +78,9 @@
                       </div>
                       <div class="col-7 col-md-8">
                         <div class="numbers">
-                          <p class="card-title">3800</p>
+                          <p class="card-title">{{this.team[2].totalScore}}</p>
                           <p></p>
-                          <p class="card-category">Superlatives</p>
+                          <p class="card-category">{{this.team[2].teamName}}</p>
                         </div>
                       </div>
                     </div>
@@ -118,9 +101,9 @@
                       </div>
                       <div class="col-7 col-md-8">
                         <div class="numbers">
-                          <p class="card-title">3500</p>
+                          <p class="card-title">{{this.team[1].totalScore}}</p>
                           <p></p>
-                          <p class="card-category">Disco Ninjas</p>
+                          <p class="card-category">{{this.team[1].teamName}}</p>
                         </div>
                       </div>
                     </div>
@@ -140,9 +123,9 @@
                       </div>
                       <div class="col-7 col-md-8">
                         <div class="numbers">
-                          <p class="card-title">2500</p>
+                          <p class="card-title">{{this.team[0].totalScore}}</p>
                           <p></p>
-                          <p class="card-category">Y-Nots</p>
+                          <p class="card-category">{{this.team[0].teamName}}</p>
                         </div>
                       </div>
                     </div>
@@ -184,7 +167,7 @@
         <div class="col-lg-12">
           <h1 class="text-center">Section Details</h1>
           <div class="section-card" style="height:50%">
-            <app-sectiondetails *ngFor="let i of items;"></app-sectiondetails>
+            <app-sectiondetails *ngFor="let team of team;" [team]="team"></app-sectiondetails>
           </div>
         </div>
       </div>
@@ -192,7 +175,7 @@
   </section>
 
   <section class="section section-lg section-safe">
-    <img class="path" src="../../../assets/img/path5.png" />
+    <img class="path" src="../../../assets/img/path5.png" height="40%" />
 
     <div class="container">
       <div class="row row-grid justify-content-between">
@@ -216,7 +199,7 @@
                   <div class="icon icon-success mb-2">
                     <i class="tim-icons icon-vector"> </i>
                   </div>
-                  <div class="ml-3"><h6>Event Date : 12th October 2021</h6></div>
+                  <div class="ml-3"><h6>Event Date : {{this.event.eventDate}}</h6></div>
                 </div>
               </li>
               <li class="py-2">
@@ -224,7 +207,7 @@
                   <div class="icon icon-success mb-2">
                     <i class="tim-icons icon-tap-02"> </i>
                   </div>
-                  <div class="ml-3"><h6>Start Time : 04:00 PM</h6></div>
+                  <div class="ml-3"><h6>Start Time : {{this.event.startTime}}</h6></div>
                 </div>
               </li>
               <li class="py-2">
@@ -232,7 +215,7 @@
                   <div class="icon icon-success mb-2">
                     <i class="tim-icons icon-single-02"> </i>
                   </div>
-                  <div class="ml-3"><h6>Meet Link : </h6></div>
+                  <div class="ml-3"><h6>Meet Link : {{this.event.eventLink}}</h6></div>
                 </div>
               </li>
             </ul>

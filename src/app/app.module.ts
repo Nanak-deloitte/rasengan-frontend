@@ -25,14 +25,13 @@ import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
 
 import { IndexComponent } from "./pages/index/index.component";
 import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./pages/examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./pages/examples/landingpage/landingpage.component";
 import { SectiondetailsComponent } from './components/sectiondetails/sectiondetails.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 @NgModule({
   declarations: [
     AppComponent,
+    // MemberComponent,
     // ContactUsComponent,
     // FooterComponent,
     // SectiondetailsComponent,

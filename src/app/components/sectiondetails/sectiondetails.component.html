@@ -1,8 +1,8 @@
 <div class="card">
-    <h3 class="card-header">Dominators</h3>
+    <h3 class="card-header">{{team.teamName}}</h3>
     <div class="card-body">
-      <h4 class="card-title">Section Leads : </h4>
-      <p class="card-text">Siddhant Sharma & Kritika Shetty </p>
+      <h4 class="card-title">Section Lead(s) : </h4>
+      <p class="card-text">{{team.sectionLead.username}}</p>
       <button class="btn btn-secondary"  data-target="#myModal"
       (click)="myModal.show()">View Members</button>
     </div>
@@ -41,56 +41,13 @@
                   </tr>
                 </thead>
                 <tbody style="color: darkgray;">
-                  <tr>
-                    <th scope="row">1</th>
-                    <td >Mark Otto</td>
-                    <td>otto@mdo</td>
+                  <tr *ngFor="let member of team.members; let i=index">
+                    <th scope="row" >{{i+1}}</th>
+                    <td >{{member.username}}</td>
+                    <td>{{member.email}}</td>
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob Thornton</td>
-                    <td>jacob@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">5</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">6</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">7</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">8</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">9</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">10</th>
-                    <td>Larry the Bird</td>
-                    <td>larry@twitter</td>
-                  </tr>
+                  
+                 
                 </tbody>
               </table>
 

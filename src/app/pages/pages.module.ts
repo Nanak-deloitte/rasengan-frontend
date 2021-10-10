@@ -20,8 +20,6 @@ import { PopoverModule } from "ngx-bootstrap/popover";
 
 import { IndexComponent } from "./index/index.component";
 import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
-import { RegisterpageComponent } from "./examples/registerpage/registerpage.component";
-import { LandingpageComponent } from "./examples/landingpage/landingpage.component";
 import { LoginComponent } from "./login/login.component";
 import { AdminComponent } from './admin/admin.component';
 import { SectiondetailsComponent } from "../components/sectiondetails/sectiondetails.component";
@@ -52,8 +50,6 @@ import { ContactUsComponent } from "../components/contact-us/contact-us.componen
         IndexComponent,
         ContactUsComponent,
         ProfilepageComponent,
-        RegisterpageComponent,
-        LandingpageComponent,
         LoginComponent,
         NavbarComponent,
         AdminComponent,
@@ -64,8 +60,6 @@ import { ContactUsComponent } from "../components/contact-us/contact-us.componen
     exports: [
         IndexComponent,
         ProfilepageComponent,
-        RegisterpageComponent,
-        LandingpageComponent,
         ContactUsComponent,
     ],
     providers: [],
