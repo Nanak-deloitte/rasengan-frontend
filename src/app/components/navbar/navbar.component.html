@@ -39,15 +39,15 @@
                         ADMIN
                     </a>
                 </li>
-                <li *ngIf="!isLoggedIn" class="nav-item">
+                <li *ngIf="isLoggedIn" class="nav-item">
                     <div class=" dropdown" dropdown>
                         <i data-toggle="dropdown" dropdownToggle id="dropdownMenuButton" style="cursor: pointer;"
                             class="tim-icons icon-single-02"> </i>
                         <div aria-labelledby="dropdownMenuButton" class=" dropdown-menu" *dropdownMenu>
-                            <a class="dropdown-item"  [routerLink]="['/home']">
+                            <a class="dropdown-item" style="color: darkblue;" [routerLink]="['/home']">
                                 HOME
                             </a>
-                            <a class="dropdown-item" (click)="logout()" [routerLink]="['/login']">
+                            <a class="dropdown-item" style="color: darkblue;" (click)="logout()" [routerLink]="['/login']">
                                 LOGOUT
                             </a>
                         </div>
