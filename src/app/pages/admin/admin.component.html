@@ -261,13 +261,7 @@
                                             *ngFor="let batch of allBatches">{{batch.batchName}}
                                         </option>
                                     </select>
-                                    <br>
-                                    <label for="select-batch">Select a Team</label>
-                                    <select name="select-batch" class="form-control form-control-sm">
-                                        <option style="color: black;" value="batch.batchId" [formControlName]="batchId"
-                                            *ngFor="let batch of ['team a', 'team b']">{{batch.batchName}}
-                                        </option>
-                                    </select>
+                                   
                                     <br>
                                     <label for="select-batch">Enter Event</label>
                                     <div class="input-group input-group-alternative"
