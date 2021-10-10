@@ -24,7 +24,6 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
 
 import { IndexComponent } from "./pages/index/index.component";
-import { ProfilepageComponent } from "./pages/examples/profilepage/profilepage.component";
 import { SectiondetailsComponent } from './components/sectiondetails/sectiondetails.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
