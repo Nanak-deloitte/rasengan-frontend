@@ -25,7 +25,6 @@ import { AdminComponent } from './admin/admin.component';
 import { SectiondetailsComponent } from "../components/sectiondetails/sectiondetails.component";
 import { FooterComponent } from "../components/footer/footer.component";
 import { ContactUsComponent } from "../components/contact-us/contact-us.component";
-import { MemberComponent } from "../components/member/member.component";
 
 @NgModule({
     imports: [
@@ -56,7 +55,6 @@ import { MemberComponent } from "../components/member/member.component";
         AdminComponent,
         SectiondetailsComponent,
         FooterComponent,
-        MemberComponent,
         
     ],
     exports: [
