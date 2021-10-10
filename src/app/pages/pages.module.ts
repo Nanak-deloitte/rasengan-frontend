@@ -19,7 +19,6 @@ import { JwBootstrapSwitchNg2Module } from "jw-bootstrap-switch-ng2";
 import { PopoverModule } from "ngx-bootstrap/popover";
 
 import { IndexComponent } from "./index/index.component";
-import { ProfilepageComponent } from "./examples/profilepage/profilepage.component";
 import { LoginComponent } from "./login/login.component";
 import { AdminComponent } from './admin/admin.component';
 import { SectiondetailsComponent } from "../components/sectiondetails/sectiondetails.component";
@@ -49,7 +48,6 @@ import { ContactUsComponent } from "../components/contact-us/contact-us.componen
     declarations: [
         IndexComponent,
         ContactUsComponent,
-        ProfilepageComponent,
         LoginComponent,
         NavbarComponent,
         AdminComponent,
@@ -59,7 +57,6 @@ import { ContactUsComponent } from "../components/contact-us/contact-us.componen
     ],
     exports: [
         IndexComponent,
-        ProfilepageComponent,
         ContactUsComponent,
     ],
     providers: [],
