@@ -104,6 +104,10 @@ export class LoginComponent implements OnInit, OnDestroy {
             this.loginForm.get("email")?.value,
             this.loginForm.get("password")?.value
         );
-        this.router.navigateByUrl("/home");
+        if (this.loginForm.get("email")?.value === "user@admin.com") {
+            this.router.navigateByUrl("/admin");
+        } else {
+            this.router.navigateByUrl("/home");
+        }
     }
 }

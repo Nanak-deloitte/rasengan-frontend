@@ -1,3 +1,4 @@
+import { ITeam } from "src/app/models/team.model";
 import { BatchService } from "./../../services/batch-services/batch.service";
 import { IBatch } from "./../../models/batch.model";
 import { IUser } from "./../../models/user.model";
@@ -18,6 +19,7 @@ import {
 })
 export class AdminComponent implements OnInit {
     allUsers: IUser[] = [];
+    batchTeams: ITeam[] = [];
     allBatches: IBatch[] = [];
     constructor(
         private http: HttpClient,
@@ -30,7 +32,12 @@ export class AdminComponent implements OnInit {
         newBatchUsers: new FormArray([]),
     });
 
+    teamsForm = this.fb.group({
+        batchId: ["", Validators.required],
+    });
+
     ngOnInit(): void {
+        this.batchService.loadAllBatches();
         this.batchService.allBatches.subscribe((batches) => {
             this.allBatches = [...batches];
         });
@@ -101,10 +108,9 @@ export class AdminComponent implements OnInit {
 
     chooseBatch(event: any) {
         console.log(event.target.innerHTML);
-        
     }
 
     loadAllBatches() {
-        // this.batchService.loadAllBatches();
+        this.batchService.loadAllBatches();
     }
 }
