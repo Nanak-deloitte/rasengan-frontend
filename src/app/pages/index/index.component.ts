@@ -111,7 +111,7 @@ export class IndexComponent implements OnInit, OnDestroy {
                         pointHoverRadius: 4,
                         pointHoverBorderWidth: 15,
                         pointRadius: 4,
-                        data: [140, 30, 350, 30, 250, 2140, 220, 190, 200, 250],
+                        data: [140, 30, 350, 30, 250, 140, 220, 190, 200, 250],
                         // data: this.data1,
                     },
                     {
