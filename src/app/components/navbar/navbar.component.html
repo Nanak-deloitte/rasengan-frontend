@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100" id="navbar-top" style="height:15%;">
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100" id="navbar-top"
+    style="height:15%;">
     <div class="container">
         <div class="navbar-translate">
             <a class="navbar-brand" placement="bottom" [routerLink]="['/home']" target="_blank"
                 tooltip="Designed and Coded by KunaKidza Team">
-                <span> <img src="./../../../assets/img/kunakid-removebg-preview.png" width="35%;"/> </span>
+                <span> <img src="./../../../assets/img/kunakid-removebg-preview.png" width="35%;" /> </span>
             </a>
             <button aria-controls="navigation-index" aria-label="Toggle navigation"
                 class="navbar-toggler navbar-toggler" [attr.aria-expanded]="!isCollapsed"
@@ -30,6 +31,11 @@
                 <li *ngIf="!isLoggedIn" class="nav-item">
                     <a class="nav-link btn btn-default d-none d-lg-block" [routerLink]="['/login']">
                         LOGIN
+                    </a>
+                </li>
+                <li *ngIf="isLoggedIn && isAdmin" class="nav-item">
+                    <a class="nav-link btn btn-default d-none d-lg-block" [routerLink]="['/login']">
+                        ADMIN
                     </a>
                 </li>
                 <li *ngIf="isLoggedIn" class="nav-item">

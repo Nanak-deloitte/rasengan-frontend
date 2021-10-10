@@ -1,3 +1,4 @@
+import { BatchService } from "./../../services/batch-services/batch.service";
 import { IBatch } from "./../../models/batch.model";
 import { IUser } from "./../../models/user.model";
 import { HttpClient } from "@angular/common/http";
@@ -17,7 +18,12 @@ import {
 })
 export class AdminComponent implements OnInit {
     allUsers: IUser[] = [];
-    constructor(private http: HttpClient, private fb: FormBuilder) {}
+    allBatches: IBatch[] = [];
+    constructor(
+        private http: HttpClient,
+        private fb: FormBuilder,
+        private batchService: BatchService
+    ) {}
 
     batchForm = this.fb.group({
         batchName: ["", Validators.required],
@@ -25,6 +31,10 @@ export class AdminComponent implements OnInit {
     });
 
     ngOnInit(): void {
+        this.batchService.allBatches.subscribe((batches) => {
+            this.allBatches = [...batches];
+        });
+
         this.http
             .get<IUser[]>("http://localhost:8080/api/user/allUsers")
             .subscribe((data) => {
@@ -87,5 +97,14 @@ export class AdminComponent implements OnInit {
                 );
                 alert("Batch Created");
             });
+    }
+
+    chooseBatch(event: any) {
+        console.log(event.target.innerHTML);
+        
+    }
+
+    loadAllBatches() {
+        // this.batchService.loadAllBatches();
     }
 }

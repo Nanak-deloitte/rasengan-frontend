@@ -10,11 +10,14 @@ export class NavbarComponent implements OnInit {
     isCollapsed = true;
     isLoggedIn = false;
     constructor(private auth: AuthService) {}
+    isAdmin: boolean = false;
 
     ngOnInit(): void {
         this.auth.isLoggedIn().subscribe((data) => {
             this.isLoggedIn = data;
+            this.isAdmin = this.auth.isAdmin();
         });
+
         this.auth.checkLogin();
     }
     logout() {

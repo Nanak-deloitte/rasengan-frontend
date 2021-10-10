@@ -62,6 +62,76 @@
         </div>
     </div>
 </div>
+
+<div aria-hidden="true" aria-labelledby="myModalLabel" bsModal class="modal fade modal-black" #myModal3="bs-modal"
+    id="myModal3" role="dialog" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header justify-content-center">
+                <button aria-hidden="true" class="close" data-dismiss="modal" (click)="myModal3.hide()" type="button">
+                    <i class="tim-icons icon-simple-remove text-white"> </i>
+                </button>
+                <div class="text-muted text-center ml-auto mr-auto">
+                    <h3 class="mb-0">Create Teams</h3>
+                </div>
+            </div>
+            <div class="modal-body">
+                Existing Teams
+                <ul>
+                    <li>hi</li>
+                    <li>hi</li>
+                    <li>hi</li>
+                </ul>
+                <form [formGroup]="batchForm" role="form">
+                    <div class="form-group mb-3">
+                        <div class="input-group input-group-alternative"
+                            [ngClass]="{'input-group-focus':focus1===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">
+                                </span>
+                            </div>
+                            <input class="form-control" placeholder="Enter Batch Name" type="text"
+                                [formControlName]="'batchName'" (blur)="focus1=false" />
+                        </div>
+                    </div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of allUsers">
+                                <td class="td-actions text-left">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input (change)="onCheckChange($event)" class="form-check-input"
+                                                type="checkbox" [value]="user.userId">
+                                            <span class="form-check-sign">
+                                                <span class="check"></span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>{{user.username}}</td>
+                                <td>{{user.email}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary my-4" type="button" (click)="createBatch(); myModal3.hide()">
+                            Finalize & Create
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="wrapper">
 
 
@@ -109,13 +179,21 @@
                             Now it's time to create new teams for
                         </h2>
                         <p>
-                            Is our hashedIn Family about to increase? Awesome! <br>
-                            Go ahead and create a new HU batch for them. They deserve some fun Kuna activities.
+                            Choose any newly created HU batch and divide them in Teams
                         </p>
                         <br>
-                        <button class="btn btn-success" data-target="#myModal2" (click)="myModal2.show()">
-                            Create Batch
+                        <!-- <div class="row"> -->
+                        <label for="select-batch">Select a batch</label>
+                        <select name="select-batch" class="form-control form-control-sm">
+                            <option value="batch.batchId" *ngFor="let batch of allBatches">{{batch.batchName}}</option>
+                        </select>
+
+                        <button class="btn btn-success" data-target="#myModal2" (click)="myModal3.show()">
+                            Create Teams
                         </button>
+                        <!-- </div> -->
+
+
                     </div>
                     <div class=" col-6 ">
                         <img class="batch-img" src="../../../assets/img/path2.png" />
