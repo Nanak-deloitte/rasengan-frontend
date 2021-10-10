@@ -1,4 +1,3 @@
-
 import { BatchService } from "./../../services/batch-services/batch.service";
 import { IBatch, ITeaminBatch } from "./../../models/batch.model";
 import { Component, OnInit, OnDestroy } from "@angular/core";
@@ -19,83 +18,59 @@ import { IEvent } from "src/app/models/event.model";
 export class IndexComponent implements OnInit, OnDestroy {
     isCollapsed = true;
     teams: ITeaminBatch[];
-    team:ITeam[]=[];
+    team: ITeam[] = [];
     batch: IBatch;
-    data1: number[]=[];
-    data2: number[]=[];
-    data3: number[]=[];
-    data4: number[]=[];
-    label1: string="";
-    label2:string="";
-    label3: string="";
-    label4:string="";
+    data1: number[] = [];
+    data2: number[] = [];
+    data3: number[] = [];
+    data4: number[] = [];
+    label1: string = "";
+    label2: string = "";
+    label3: string = "";
+    label4: string = "";
     user: IUser;
-    constructor(private batchService: BatchService, private authService:AuthService, private teamService: TeamService, private eventService: EventService) {}
+    constructor(
+        private batchService: BatchService,
+        private authService: AuthService,
+        private teamService: TeamService,
+        private eventService: EventService
+    ) {}
     batches: IBatch[] = [];
     event: IEvent;
 
     ngOnInit() {
-
-        console.log(this.authService.getUserDetails());
-
+        
         this.batchService.loadAllBatches();
         this.batchService.allBatches.subscribe((data) => {
             this.batches = [...data];
             console.log(data);
         });
-        this.user=this.authService.getUserDetails();
+        this.user = this.authService.getUserDetails();
         console.log(this.user);
 
-          this.batchService.getBatch(this.user.batch.batchId).subscribe((res)=>{
-            this.batch=res;
-            this.teams=res.teams;
+        this.batchService.getBatch(this.user.batch.batchId).subscribe((res) => {
+            this.batch = res;
+            this.teams = res.teams;
             console.log(this.batch);
             console.log(this.teams);
-            for(let i=0;i<this.teams.length;i++){
-              this.teamService.getTeam(this.teams[i].teamId).subscribe((res)=>{
-                this.team[i]=res;
-                // if(i==0){
-                //   this.label1=this.team[i].teamName;
-                // this.data1=this.team[i].eventScores;
-                // }
-                // else
-                // if(i==1){
-                //   this.label2=this.team[i].teamName;
-                // this.data2=this.team[i].eventScores;
-                // }
-                // else
-                // if(i==2){
-                  
-                //   this.label3=this.team[i].teamName;
-                // this.data3=this.team[i].eventScores;
-                // }
-                // else{
-                //   this.label4=this.team[i].teamName;
-                // this.data4=this.team[i].eventScores;
-                // }
-
-                // console.log(res);
-                // this.teamService.getStatusChanged.next();
-  
-              })
-
+            for (let i = 0; i < this.teams.length; i++) {
+                this.teamService
+                    .getTeam(this.teams[i].teamId)
+                    .subscribe((res) => {
+                        this.team[i] = res;
+                    });
             }
             console.log("before", this.team);
-          });
+        });
 
-      
-          this.eventService.getEvent(this.user.batch.batchId).subscribe((res)=>{
-            this.event=res;
+        this.eventService.getEvent(this.user.batch.batchId).subscribe((res) => {
+            this.event = res;
             console.log(this.event);
             // this.eventService.allEvents.next();
-          });
-     
-
+        });
 
         var body = document.getElementsByTagName("body")[0];
         body.classList.add("home-page");
-
-
 
         var canvas: any = document.getElementById("chartBig");
         var ctx = canvas.getContext("2d");
@@ -159,7 +134,7 @@ export class IndexComponent implements OnInit, OnDestroy {
                         // data: this.data2,
                     },
                     {
-                      label: "Team C's Score",
+                        label: "Team C's Score",
                         fill: true,
                         backgroundColor: gradientFill,
                         borderColor: "#A91B60",

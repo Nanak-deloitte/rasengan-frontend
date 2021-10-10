@@ -33,8 +33,9 @@
                         LOGIN
                     </a>
                 </li>
+
                 <li *ngIf="isLoggedIn && isAdmin" class="nav-item">
-                    <a class="nav-link btn btn-default d-none d-lg-block" [routerLink]="['/login']">
+                    <a class="nav-link btn btn-default d-none d-lg-block" [routerLink]="['/admin']">
                         ADMIN
                     </a>
                 </li>
@@ -43,6 +44,9 @@
                         <i data-toggle="dropdown" dropdownToggle id="dropdownMenuButton" style="cursor: pointer;"
                             class="tim-icons icon-single-02"> </i>
                         <div aria-labelledby="dropdownMenuButton" class=" dropdown-menu" *dropdownMenu>
+                            <a class="dropdown-item"  [routerLink]="['/home']">
+                                HOME
+                            </a>
                             <a class="dropdown-item" (click)="logout()" [routerLink]="['/login']">
                                 LOGOUT
                             </a>
