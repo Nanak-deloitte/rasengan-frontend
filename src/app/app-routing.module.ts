@@ -10,7 +10,7 @@ import { LoginComponent } from "./pages/login/login.component";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" },
   { path: "home", component: IndexComponent },
   { path: "profile", component: ProfilepageComponent },
   { path: "login", component: LoginComponent },
