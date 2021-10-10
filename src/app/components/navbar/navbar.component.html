@@ -37,7 +37,7 @@
                         <i data-toggle="dropdown" dropdownToggle id="dropdownMenuButton" style="cursor: pointer;"
                             class="tim-icons icon-single-02"> </i>
                         <div aria-labelledby="dropdownMenuButton" class=" dropdown-menu" *dropdownMenu>
-                            <a class="dropdown-item" (click)="logout()" href="#">
+                            <a class="dropdown-item" (click)="logout()" [routerLink]="['/login']">
                                 LOGOUT
                             </a>
                         </div>

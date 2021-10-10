@@ -75,7 +75,7 @@ export class IndexComponent implements OnInit, OnDestroy {
                 // }
 
                 // console.log(res);
-                this.teamService.getStatusChanged.next();
+                // this.teamService.getStatusChanged.next();
   
               })
 
@@ -86,8 +86,8 @@ export class IndexComponent implements OnInit, OnDestroy {
       
           this.eventService.getEvent(this.user.batch.batchId).subscribe((res)=>{
             this.event=res;
-            console.log(this.event[0]);
-            this.eventService.allEvents.next();
+            console.log(this.event);
+            // this.eventService.allEvents.next();
           });
      
 
